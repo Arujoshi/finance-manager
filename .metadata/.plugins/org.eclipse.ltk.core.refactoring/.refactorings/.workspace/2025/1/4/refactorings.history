@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename resource &apos;AuthenticationService&apos; to &apos;FinanceManager&apos;" description="Rename resource &apos;AuthenticationService&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/AuthenticationService" name="FinanceManager" stamp="1737532240424" updateReferences="true"/>
-</session>

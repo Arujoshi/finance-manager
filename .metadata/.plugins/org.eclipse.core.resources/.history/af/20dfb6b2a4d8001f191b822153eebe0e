@@ -1,5 +1,0 @@
-package com.finance.exception;
-
-public class ExpenseNotFoundException extends Exception {
-
-}
