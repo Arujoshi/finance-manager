@@ -1,0 +1,17 @@
+package com.finance.mappper;
+
+import com.finance.dto.BudgetDTO;
+import com.finance.model.Budget;
+
+public class BudgetMapper {
+
+    public static BudgetDTO toDTO(Budget budget) {
+        return new BudgetDTO(
+                budget.getId(),
+                budget.getCategory(),
+                budget.getBudgetAmount(),
+                budget.getSpentAmount(),
+                budget.getUser()
+        );
+    }
+}

@@ -1,0 +1,8 @@
+package com.finance.exception;
+
+public class BudgetNotFoundException {
+
+	public BudgetNotFoundException(String msg) {
+		super(msg);
+	}
+}

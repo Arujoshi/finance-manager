@@ -1,0 +1,8 @@
+package com.finance.exception;
+
+public class IncomeNotFoundException {
+
+	public IncomeNotFoundException(String msg) {
+		super(msg);
+	}
+}

@@ -1,0 +1,15 @@
+package com.finance.dto;
+
+import com.finance.model.UserInfo;
+
+public class UserInfoMapper {
+
+	public static UserDTO toDTO(UserInfo userInfo) {
+        return new UserDTO(
+            userInfo.getUserId(),
+            userInfo.getName(),
+            userInfo.getEmail(),
+            userInfo.getPhone()
+        );
+    }
+}

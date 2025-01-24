@@ -1,0 +1,39 @@
+package com.finance.mappper;
+
+import com.finance.dto.IncomeDTO;
+import com.finance.model.Income;
+
+public class IncomeMapper {
+
+    // Convert Income to IncomeDTO
+    public static IncomeDTO toDTO(Income income) {
+        IncomeDTO incomeDTO = new IncomeDTO();
+        incomeDTO.setId(income.getId());
+        incomeDTO.setSource(income.getSource());
+        incomeDTO.setAmount(income.getAmount());
+        incomeDTO.setDate(income.getDate());
+        incomeDTO.setDescription(income.getDescription());
+
+        // Map user data
+        if (income.getUser() != null) {
+            incomeDTO.setUser(UserInfoMapper.toDTO(income.getUser()));  // Map UserInfo to UserDTO
+        }
+
+        return incomeDTO;
+    }
+
+    // Convert IncomeDTO to Income
+    public static Income toEntity(IncomeDTO incomeDTO) {
+        Income income = new Income();
+        income.setId(incomeDTO.getId());
+        income.setSource(incomeDTO.getSource());
+        income.setAmount(incomeDTO.getAmount());
+        income.setDate(incomeDTO.getDate());
+        income.setDescription(incomeDTO.getDescription());
+
+        // Map user data (you will need to set the user from the repository)
+        // This part will be handled in the service, not directly in the mapper
+
+        return income;
+    }
+}

@@ -1,0 +1,41 @@
+package com.finance.service;
+
+import com.finance.exception.ExpenseNotFoundException;
+import com.finance.model.Expense;
+import com.finance.repository.ExpenseRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.Optional;
+
+@Service
+public class ExpenseService {
+	
+    @Autowired
+    private ExpenseRepository expenseRepository;
+
+    public List<Expense> getExpensesByUserId(Long userId) {
+        return expenseRepository.findByUserUserId(userId);
+    }
+
+    public Expense addExpense(Expense expense) {
+        return expenseRepository.save(expense);
+    }
+
+    public Expense deleteExpense(Long expenseId) {
+        Optional<Expense> expense=expenseRepository.findById(expenseId);
+        if(expense.isPresent()) {
+        	Expense gotExpense=expense.get();
+        	expenseRepository.deleteById(expenseId);
+        	return gotExpense;
+        }
+        else {
+        	return new ExpenseNotFoundException("Exception not found with id: "+expenseId);
+        }
+    }
+    
+    public void updateExpense(Long expenseId, Expense expense) {
+    	
+    }
+}
